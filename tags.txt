@@ -1,0 +1,32 @@
+TAG	    POS	    MORPHOLOGY	    DESCRIPTION
+
+CC	    CCONJ	ConjType=comp	conjunction, coordinating [for, and, nor, but, or, yet, so]
+CD	    NUM	    NumType=card	cardinal number
+DT	    DET		                determiner
+EX	    PRON	AdvType=ex	    existential there
+IN	    ADP		                conjunction, subordinating or preposition [once, while, when, whenever, where, wherever, before, after]
+JJ	    ADJ	    Degree=pos	    adjective
+JJR	    ADJ	    Degree=comp	    adjective, comparative [-er]
+JJS	    ADJ	    Degree=sup	    adjective, superlative [-est]
+MD	    VERB	VerbType=mod	verb, modal auxiliary [can, could, may, might, must, ought, shall, should, will, would]
+NN	    NOUN	Number=sing	    noun, singular or mass
+NNS	    NOUN	Number=plur	    noun, plural
+PDT	    DET		                predeterminer [such, what, rather, quite] (before indefinite article)
+POS	    PART	Poss=yes	    possessive ending
+PRP	    PRON	PronType=prs	pronoun, personal
+PRP$	DET	    PronType=prs Poss=yes	pronoun, possessive
+RB	    ADV	    Degree=pos	    adverb
+RBR	    ADV	    Degree=comp	    adverb, comparative [-er]
+RBS	    ADV	    Degree=sup	    adverb, superlative [-est]
+RP	    ADP		                adverb, particle [above, about, across, ahead, away, back, in, off, under, up]
+TO	    PART	PartType=inf VerbForm=inf	infinitival “to”
+VB	    VERB	VerbForm=inf	                        verb, base form [to-]
+VBD	    VERB	VerbForm=fin Tense=past	                verb, past tense [-ed]
+VBG	    VERB	VerbForm=part Tense=pres Aspect=prog	verb, gerund or present participle [-ing]
+VBN	    VERB	VerbForm=part Tense=past Aspect=perf	verb, past participle [-ed]
+VBP	    VERB	VerbForm=fin Tense=pres	                verb, non-3rd person singular present
+VBZ	    VERB	VerbForm=fin Tense=pres Number=sing Person=three	verb, 3rd person singular present [-s]
+WDT	    DET		                wh-determiner [what, which]
+WP	    PRON		            wh-pronoun, personal [who, whether, what, which]
+WP$	    DET	Poss=yes	        wh-pronoun, possessive [whose]
+WRB	    ADV		                wh-adverb [how, when, whence, where, why]
