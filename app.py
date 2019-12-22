@@ -8,6 +8,7 @@ import itertools
 import spacy
 import pyocr
 import pyocr.builders
+import time
 from PIL import Image, ImageDraw, ImageFilter
 
 BOUND_PADDING = 50
@@ -424,6 +425,7 @@ def get_all_options(words, grammars, svo, index):
     gd_count = 0
     all_word_lists = {}
     for gd in grammar_dicts.values():
+        time.sleep(.1)
         print("-------------")
         print(svo, gd_count)
         list_of_wl = []
@@ -437,11 +439,15 @@ def get_all_options(words, grammars, svo, index):
                         text_list.append(text)
                         word_list.append(wl)
             if text_list == []:
+                # don't print if any have no viable options
                 print("No viable options :(")
                 break
-            print(text_list)
+            else:
+                print(text_list)
+                # gd_count += 1
             list_of_wl.append(word_list)
         all_word_lists[gd_count] = list_of_wl
+        # accurately reflect no matches
         gd_count += 1
     return all_word_lists
 
@@ -529,15 +535,24 @@ def get_user_choice(words, wct, wci, g, svo, index):
 
 if __name__ == '__main__':
     path = sys.argv[1]
-    pages = []
-    for f in os.listdir(path):
-        pages.append(f)
-    num_generations_per_page = 1
-    for f in pages:
+    while True:
+        pages = []
+        filenum = 0
+        print("Choose an imagefile to turn into a blackout poem!")
+        for f in os.listdir(path):
+            pages.append(f)
+            time.sleep(.1)
+            print(filenum, ":", f)
+            filenum += 1
+        user_page = int(input())
+        f = pages[user_page]
         imagefile = os.path.join(path, f)
         print("Procesing " + imagefile)
         boxes = setup(imagefile)
-        # words = parse_words(boxes)
-        # g = all_subject_tags()
-        # get_all_options(words, g, "SUBJECT", 0)
         get_user_input(imagefile, boxes)
+        print("Keep going? (y/n)")
+        user_keep_going = input()
+        if user_keep_going == "y":
+            continue
+        else:
+            break
